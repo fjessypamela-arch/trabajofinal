@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EducaTech Instituto Superior</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS propio -->
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+<!-- =====================================
+     NAVBAR
+===================================== -->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">EducaFlower</a>
+
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#programas">Programas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#beneficios">Beneficios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                </ul>
+                <a href="#registro" class="btn btn-success ms-lg-3">Regístrate</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+
+<!-- =====================================
+     HERO
+===================================== -->
+<section id="inicio" class="hero">
+    <div class="container">
+        <div class="hero-contenido">
+
+            <div class="hero-texto">
+                <span class="etiqueta">INSTITUTO SUPERIOR</span>
+                <h1>Construye tu futuro con nosotros</h1>
+                <p>
+                    Descubre nuestros programas académicos y prepárate
+                    para alcanzar tus metas profesionales.
+                </p>
+                <a href="#registro" class="btn btn-success">Quiero registrarme</a>
+            </div>
+
+            <div class="hero-imagen">
+                <img src="img/images.jpg" alt="estudiantes">
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- =====================================
+     CONTENIDO + FORMULARIO LATERAL
+===================================== -->
+<section class="contenido-lateral">
+    <div class="container">
+        <div class="layout-dos-columnas">
+
+            <!-- ============ COLUMNA IZQUIERDA ============ -->
+            <div class="columna-principal">
+
+                <!-- NOSOTROS -->
+                <section id="nosotros" class="bloque">
+                    <h2>Nosotros</h2>
+                    <p>
+                        Somos una institución de educación superior comprometida
+                        con la formación profesional y el desarrollo de nuestros
+                        estudiantes.
+                    </p>
+                </section>
+
+                <!-- BENEFICIOS -->
+                <section id="beneficios" class="bloque">
+                    <h2>¿Por qué estudiar con nosotros?</h2>
+
+                    <div class="beneficios-grid">
+
+                        <article class="beneficio">
+                            <div class="icono">🎓</div>
+                            <h3>Formación profesional</h3>
+                            <p>Aprende con programas orientados al mundo laboral.</p>
+                        </article>
+
+                        <article class="beneficio">
+                            <div class="icono">💻</div>
+                            <h3>Tecnología</h3>
+                            <p>Utiliza herramientas modernas para mejorar tu aprendizaje.</p>
+                        </article>
+
+                        <article class="beneficio">
+                            <div class="icono">🚀</div>
+                            <h3>Oportunidades</h3>
+                            <p>Prepárate para nuevas oportunidades profesionales.</p>
+                        </article>
+
+                    </div>
+                </section>
+
+                <!-- PROGRAMAS -->
+                <section id="programas" class="bloque">
+                    <h2>Nuestros programas</h2>
+                    <p class="texto-seccion">Conoce nuestros programas académicos.</p>
+
+                    <!-- Se cargan desde Google Sheets -->
+                    <div id="listaProgramas" class="cards-programas"></div>
+                </section>
+
+            </div>
+
+            <!-- ============ COLUMNA DERECHA: FORMULARIO ============ -->
+            <aside class="columna-lateral">
+                <div id="registro" class="formulario-contenedor">
+
+                    <span class="etiqueta">INSCRIPCIONES</span>
+                    <h2>Regístrate ahora</h2>
+                    <p>
+                        Déjanos tus datos y recibe información sobre
+                        nuestros programas académicos.
+                    </p>
+
+                    <form id="formularioRegistro">
+
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre completo</label>
+                            <input type="text" id="nombre" class="form-control"
+                                   placeholder="Ingresa tu nombre">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="correo" class="form-label">Correo electrónico</label>
+                            <input type="email" id="correo" class="form-control"
+                                   placeholder="ejemplo@gmail.com">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="telefono" class="form-label">Teléfono</label>
+                            <input type="tel" id="telefono" class="form-control"
+                                   placeholder="Ingresa tu teléfono">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="programa" class="form-label">Programa de interés</label>
+                            <select id="programa" class="form-select">
+                                <option value="">Cargando programas...</option>
+                            </select>
+                        </div>
+
+                        <div class="form-check mb-3">
+                            <input type="checkbox" id="acepto" class="form-check-input">
+                            <label for="acepto" class="form-check-label">
+                                Acepto los términos y condiciones.
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-success w-100">
+                            Enviar registro
+                        </button>
+
+                        <p id="mensaje" class="mensaje"></p>
+
+                    </form>
+                </div>
+            </aside>
+
+        </div>
+    </div>
+</section>
+
+</main>
+
+
+<!-- =====================================
+     FOOTER
+===================================== -->
+<footer id="contacto">
+    <div class="container">
+        <h3>EducaFlower Instituto Superior</h3>
+        <p>Formación profesional para tu futuro.</p>
+        <p>© 2026 EducaFlower. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+<!-- Bootstrap JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- JavaScript propio -->
+<script src="js/script.js"></script>
+
+</body>
+</html>
